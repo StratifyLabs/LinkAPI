@@ -102,7 +102,7 @@ FileSystem &FileSystem::rename(const Rename &options) {
   return *this;
 }
 
-bool FileSystem::exists(var::StringView path) {
+bool FileSystem::exists(var::StringView path) const {
   return File(path, OpenMode::read_only() FSAPI_LINK_MEMBER_DRIVER_LAST)
       .status()
       .is_success();
